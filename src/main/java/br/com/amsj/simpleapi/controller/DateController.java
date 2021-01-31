@@ -1,5 +1,7 @@
 package br.com.amsj.simpleapi.controller;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.Date;
 
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +14,13 @@ public class DateController {
 	@RequestMapping(method=RequestMethod.GET, path="/")
 	public String getCurrentDate() {
 		
-		return "API date " + new Date();
+		String server = "";
+		try {
+			server = InetAddress.getLocalHost().getCanonicalHostName();
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		}
+		
+		return server + " - " + new Date();
 	}
 }
