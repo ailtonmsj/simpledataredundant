@@ -1,4 +1,4 @@
-package br.com.amsj.simpleapi.controller;
+package br.com.amsj.simpleapi.redundant.controller;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;

@@ -8,10 +8,10 @@
 		<version>2.4.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>br.com.amsj.simpleapi</groupId>
-	<artifactId>SimpleData</artifactId>
+	<groupId>br.com.amsj.simpleapi.redundant</groupId>
+	<artifactId>SimpleDataRedundant</artifactId>
 	<version>1.0.0</version>
-	<name>SimpleData</name>
+	<name>SimpleDataRedundant</name>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
