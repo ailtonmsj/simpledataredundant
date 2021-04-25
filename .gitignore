@@ -1,4 +1,5 @@
 /target/
+*.log
 
 ### LOGS ###
 /logs/
