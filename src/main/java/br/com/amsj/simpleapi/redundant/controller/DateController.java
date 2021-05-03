@@ -1,11 +1,12 @@
 package br.com.amsj.simpleapi.redundant.controller;
 
-import java.net.InetAddress;
-import java.net.UnknownHostException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,20 +17,21 @@ public class DateController {
 	private final Logger log = LoggerFactory.getLogger(this.getClass());
 	
 	@RequestMapping(method=RequestMethod.GET, path="/")
-	public String getCurrentDate() {
+	public ResponseEntity<String> getCurrentDate() {
 		
-		String server = "";
-		try {
-			server = InetAddress.getLocalHost().getCanonicalHostName();
-		} catch (UnknownHostException e) {
-			e.printStackTrace();
-			log.error(e.getMessage());
-		}
+		ResponseEntity<String> responseEntity = null;
 		
-		String data = server + " - " + new Date() + " - " + " from redundant";
+		Date date = new Date();
+		
+		SimpleDateFormat dt1 = new SimpleDateFormat("dd/mm/yyyy HH:MM:SS");
+		String dateString = dt1.format (date);
+		
+		log.info("Success");
+		
+		responseEntity = new ResponseEntity<String>(dateString, HttpStatus.OK);
 		
 		log.info("Success on Redundant");
 		
-		return data;
+		return responseEntity;
 	}
 }
