@@ -13,9 +13,9 @@ spec:
       name: simpledataredundant
       labels:
         app: simpledataredundant
-        version: v1
+        version: v2
     spec:
       containers:
       - name: simpledataredundant
-        image: ailtonmsj/simpledataredundant:v1
+        image: ailtonmsj/simpledataredundant:v3
         imagePullPolicy: Always

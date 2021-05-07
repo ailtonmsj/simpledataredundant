@@ -14,5 +14,5 @@ spec:
         host: simpledataredundant.demo-circuitbreaker.svc.cluster.local
         port:
           number: 8080
-        subset: v1
+        subset: v2
       weight: 100

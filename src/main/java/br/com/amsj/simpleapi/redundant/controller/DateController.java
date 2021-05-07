@@ -23,7 +23,7 @@ public class DateController {
 		
 		Date date = new Date();
 		
-		SimpleDateFormat dt1 = new SimpleDateFormat("dd/mm/yyyy HH:MM:SS");
+		SimpleDateFormat dt1 = new SimpleDateFormat("yyyy/MM/dd HH:mm:SS");
 		String dateString = dt1.format (date);
 		
 		log.info("Success");
